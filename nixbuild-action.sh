@@ -154,7 +154,8 @@ egrep -v "substituters =|trusted-public-keys =" "$NIX_CONF_FILE" >"$NIX_CONF_FIL
 cat >>"$NIX_CONF_FILE.tmp" <<EOF
 $substituters
 $public_keys
-max-jobs = 0
+max-jobs = 1
+allow-import-from-derivation = true
 builders = @$NIX_BUILDERS_FILE
 builders-use-substitutes = true
 require-sigs = true
